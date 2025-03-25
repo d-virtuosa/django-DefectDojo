@@ -260,7 +260,8 @@ def get_item(item_node, test):
             scanner_confidence = 7
 
     host_node = item_node.findall("host")[0]
-    url_host = host_node.text
+    path_node = item_node.findall("path")[0]
+    url_host = host_node.text + path_node.text
     path = item_node.findall("path")[0].text
 
     # Finding and Endpoint objects returned have not been saved to the database
